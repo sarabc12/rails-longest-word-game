@@ -1,0 +1,13 @@
+<h1>New Game</h1>
+<div class="letters">
+ <%= @letters.join(" ")%>
+</div>
+<p>What is the longest word you can find?</p>
+<form class= "all-word" method="POST" action="/score" data-turbo="false">
+  <div class="input-group">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+   <%= hidden_field_tag :letters, @letters %>
+    <input type="text" name="word" class="form-control">
+    <button type="submit" class="btn btn-primary">Play</button>
+  </div>
+</form>
